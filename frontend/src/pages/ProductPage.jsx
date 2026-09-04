@@ -9,7 +9,7 @@ export default function ProductPage(){
   const [selectedPlan, setSelectedPlan] = useState(null)
 
   useEffect(()=>{
-    const base = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:4000' : '')
+    const base = import.meta.env.VITE_API_URL || 'https://emi-store-omuy.onrender.com'
     fetch(`${base}/api/products/${slug}`)
       .then(r=>r.json())
       .then(setProduct)

@@ -5,7 +5,7 @@ export default function HomePage(){
   const [products, setProducts] = useState([])
 
   useEffect(()=>{
-    const base = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:4000' : '')
+    const base = import.meta.env.VITE_API_URL || 'https://emi-store-omuy.onrender.com'
     fetch(`${base}/api/products`)
       .then(r=>r.json())
       .then(setProducts)
