@@ -5,11 +5,7 @@
     "backend",
     "frontend"
   ],
-  "dependencies": {
-    "prisma": "^5.0.0"
-  },
   "scripts": {
-    "build": "npm --workspace frontend run build",
-    "postinstall": "npm --workspace backend run prisma:generate"
+    "build": "npm --workspace frontend run build"
   }
 }
