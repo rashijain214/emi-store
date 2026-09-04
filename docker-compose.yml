@@ -1,17 +1,15 @@
 services:
   db:
-    image: mysql:8.0
+    image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: sde1emi
-      MYSQL_USER: dev
-      MYSQL_PASSWORD: devpass
+      POSTGRES_DB: sde1emi
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: devpass
     ports:
-      - '3307:3306'
-    command: --default-authentication-plugin=mysql_native_password
+      - '5432:5432'
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/var/lib/postgresql/data
 
 volumes:
   db_data:
