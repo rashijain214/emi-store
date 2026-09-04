@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: sde1emi
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: devpass
+    ports:
+      - '3307:3306'
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

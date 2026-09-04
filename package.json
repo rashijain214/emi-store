@@ -1,0 +1,12 @@
+{
+  "name": "sde1-emi-mysql",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm --workspace frontend run build",
+    "postinstall": "npm --workspace backend run prisma:generate"
+  }
+}
